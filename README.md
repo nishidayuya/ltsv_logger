@@ -1,7 +1,5 @@
 # LtsvLogger
 
-TODO: Write a gem description
-
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -18,7 +16,29 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+### Normal case
+
+    require "ltsv_logger"
+    logger = LtsvLogger.new(STDOUT)
+    a = 2
+    logger.info(message: "double a", a: a, double_a: a * 2)
+    logger.info("triple of a", a: a, triple_a: a * 3)
+    logger.info {
+      {message: "double a", a: a, double_a: a * 2}
+    }
+    logger.info {
+      ["triple a", a: a, triple_a: a * 3]
+    }
+
+## License
+
+X11 License.
+See LICENSE.txt for more information.
+
+### Why X11 License?
+
+You can see following URI:
+http://www.gnu.org/licenses/license-list.en.html#X11License
 
 ## Contributing
 
